@@ -2,7 +2,7 @@ Project Proposal
 
 Title​: Awesome Autos Reviews (AwesomeAutosReviews.com)
 
-Team Members:​ Ryan Tartar- Git: RTartar, Robert Banda- Git: RBanda1985, Ameka Al- Git:AmekaAli, Nico Cossou- Git: nicocossou, Charles Dalton- Git:
+Team Members:​ Ryan Tartar- Git: RTartar, Robert Banda- Git: RBanda1985, Ameka Ali- Git:AmekaAli, Nico Cossou- Git: nicocossou, Charles Dalton- Git:
 
 Summary of your project:What are you doing? 
 
