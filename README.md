@@ -6,7 +6,7 @@ Team Members:​ Ryan Tartar- Git: RTartar, Robert Banda- Git: RBanda1985, Ameka
 
 Summary of your project:What are you doing? 
 
-We are creating a web app that provides users reviews and ratings on newand used automobiles. “Kelly Blue Book” style car review blog.
+We are creating a web app that provides users reviews and ratings on new and used automobiles. “Kelly Blue Book” style car review blog.
 
 How will you do it?
 
