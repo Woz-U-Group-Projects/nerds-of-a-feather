@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('mopars', {
     MoparID: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     Make: {
       type: DataTypes.STRING(50),
