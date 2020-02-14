@@ -1,13 +1,8 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": null,
-    "database": "database_development",
-=======
-    "password": "Man##mysql123",
+    "password": "Password1!",
     "database": "database",
->>>>>>> 2c34b912e056f7f7dc292250ea19a7564cf77b87
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
