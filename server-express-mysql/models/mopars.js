@@ -3,8 +3,10 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('mopars', {
     MoparID: {
-      type: DataTypes.INTEGER,
-      allowNull: true
+      type: DataTypes.INTEGER(5).UNSIGNED,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
     Make: {
       type: DataTypes.STRING(50),
@@ -33,6 +35,10 @@ module.exports = function(sequelize, DataTypes) {
     PRICE: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    VIN: {
+      type: DataTypes.STRING(17),
+      allowNull: false
     }
   }, {
     tableName: 'mopars'

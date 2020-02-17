@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'Password1!',
-  database: 'sakila'
+  database: 'database'
 });
 
 connection.connect(function(err) {
@@ -18,8 +18,29 @@ connection.connect(function(err) {
 })
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/mopars', function(req, res, next) {
+  models.mopars.findAll({}).then(moparsFound => {
+    res.render('/mopars', {
+      mopars: moparsFound
+    });
+  });
 });
+
+router.post('/mopars', (req, res) => {
+  models.mopars
+  .findOrCreate({
+    where: {
+      vin: req.body.vin
+    }
+  })
+  .spread(function(result, created) {
+    if (created) {
+      res.send('The vehicle has been submitted.')
+      res.redirect('/mopars')
+    } else {
+      res.send('This vehicle exist within the system.')
+    }
+  });;
+})
 
 module.exports = router;
