@@ -3,17 +3,12 @@
         "mopars": {
             "tableName": "mopars",
             "schema": {
-                "id": {
+                "MoparID": {
                     "allowNull": false,
                     "primaryKey": true,
                     "autoIncrement": true,
-                    "field": "id",
-                    "seqType": "Sequelize.INTEGER"
-                },
-                "MoparID": {
-                    "allowNull": true,
                     "field": "MoparID",
-                    "seqType": "Sequelize.INTEGER"
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
                 },
                 "Make": {
                     "allowNull": false,
@@ -49,6 +44,61 @@
                     "allowNull": true,
                     "field": "PRICE",
                     "seqType": "Sequelize.INTEGER"
+                },
+                "VIN": {
+                    "allowNull": false,
+                    "field": "VIN",
+                    "seqType": "Sequelize.STRING(17)"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "idusers": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "idusers",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "FirstName": {
+                    "allowNull": false,
+                    "field": "FirstName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "LastName": {
+                    "allowNull": false,
+                    "field": "LastName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "UserName": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "UserName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Password": {
+                    "allowNull": false,
+                    "field": "Password",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Email": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "Email",
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "createdAt": {
                     "allowNull": false,
