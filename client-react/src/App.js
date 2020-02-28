@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Project from "./components/Project";
 import "./App.css";
 import User from './components/User';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
