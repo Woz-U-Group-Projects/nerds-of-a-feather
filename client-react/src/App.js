@@ -1,13 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import Project from "./components/Project";
 import "./App.css";
+import User from './components/User';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+class App extends Component {
+
+  onSubmit = fields => {
+    console.log("App comp got:", fields);
+  }
+  render() {
   return (
     <div className="App">
-      <Project />
+      <User onSubmit={fields => this.onSubmit(fields)}/>
     </div>
   );
+}
 }
 
 export default App;
