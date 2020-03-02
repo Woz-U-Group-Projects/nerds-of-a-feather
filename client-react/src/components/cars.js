@@ -19,7 +19,7 @@ class Cars extends Component {
     }
 
     componentDidMount() {
-        this.getDat();
+        this.getData();
     }
 
     getData = () => {
@@ -105,7 +105,7 @@ class Cars extends Component {
             }
             axios.post(`http://localhost:3001/vehicles/cars`, newVehicle)
             .then(res => {
-                this.getDat();
+                this.getData();
                 this.vehicleName.current.value = '';
             });
         };
