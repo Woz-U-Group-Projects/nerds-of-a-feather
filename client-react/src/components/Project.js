@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 class Project extends React.Component {
-  constructor(props) {s
+  constructor(props) {
     super(props);
     this.state = { projects: [] };
     this.taskName = React.createRef();
@@ -21,7 +21,7 @@ class Project extends React.Component {
 
     // Express uses port 3001 (react uses 3000)
     let url = "http://localhost:3001/tasks";
-    axios.get(url).then(response => this.setState({ projects: response.data }));
+   // axios.get(url).then(response => this.setState({ projects: response.data }));
   };
 
   addTask = () => {
