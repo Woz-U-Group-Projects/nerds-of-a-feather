@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class Cars extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             year: '',
@@ -14,8 +14,33 @@ class Cars extends Component {
             doors: '',
             color: '',
             price: ''
-        }
+        };
+        this.vehicleName = React.createRef();
     }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    getData = () => {
+        let url = "http://localhost:3001/vehicles/cars";
+        axios.get(url)
+        .then(res => {
+            console.log(res);
+
+            this.setState({
+                year: res.data,
+                make: res.data,
+                model: res.data,
+                mileage: res.data,
+                vin: res.data,
+                doors: res.data,
+                color: res.data,
+                price: res.data
+            });
+        });
+    };
+    
 
     handleYearChange = (event) => {
         this.setState({
@@ -65,62 +90,67 @@ class Cars extends Component {
         })
     }
 
-    
-    handleSubmit = event => {
-        this.setState(`
-        ${this.state.year} 
-        ${this.state.make}
-        ${this.state.model}
-        ${this.state.mileage}
-        ${this.state.vin}
-        ${this.state.doors}
-        ${this.state.color}
-        ${this.state.price}
-        `)
-        event.preventDefault()
-    }
+        handleSubmit = event => {
+            event.preventDefault();
+
+            const newVehicle = {
+                year: this.state.year,
+                make: this.state.make,
+                model: this.state.model,
+                mileage: this.state.mileage,
+                vin: this.state.vin,
+                doors: this.state.doors,
+                color: this.state.color,
+                price: this.state.price
+            }
+            axios.post(`http://localhost:3001/vehicles/cars`, newVehicle)
+            .then(res => {
+                this.getData();
+                this.vehicleName.current.value = '';
+            });
+        };
 
     render() { 
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
                     <label>Year: </label>
-                    <input type='number' value={this.state.year} onChange={this.handleYearChange}/>
+                    <input ref={this.vehicleName} type='number' value={this.state.year} onChange={this.handleYearChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Make: </label>
-                    <input type='text' value={this.state.make} onChange={this.handleMakeChange}/>
+                    <input ref={this.vehicleName} type='text' value={this.state.make} onChange={this.handleMakeChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Model: </label>
-                    <input type='text' value={this.state.model} onChange={this.handleModelChange}/>
+                    <input ref={this.vehicleName} type='text' value={this.state.model} onChange={this.handleModelChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Mileage: </label>
-                    <input type='number' value={this.state.mileage} onChange={this.handleMileageChange}/>
+                    <input ref={this.vehicleName} type='number' value={this.state.mileage} onChange={this.handleMileageChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Vin: </label>
-                    <input type='text' value={this.state.vin} onChange={this.handleVinChange}/>
+                    <input ref={this.vehicleName} type='text' value={this.state.vin} onChange={this.handleVinChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Number Of Doors: </label>
-                    <input type='number' value={this.state.doors} onChange={this.handleDoorsChange}/>
+                    <input ref={this.vehicleName} type='number' value={this.state.doors} onChange={this.handleDoorsChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Color: </label>
-                    <input type='text' value={this.state.color} onChange={this.handleColorChange}/>
+                    <input ref={this.vehicleName} type='text' value={this.state.color} onChange={this.handleColorChange}/>
                     <br />
                 </div>
                 <div>
                     <label>Price: </label>
-                    <input type='number' value={this.state.price} onChange={this.handlePriceChange}/>
+                    <input ref={this.vehicleName} type='number' value={this.state.price} onChange={this.handlePriceChange}/>
                     <br />
                 </div>
                 <button type='submit'>Submit</button>

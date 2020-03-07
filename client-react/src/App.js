@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import User from './components/User';
+//import User from './components/User';
+import Cars from './components/cars';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PicUploader from './components/ImageUploader';
 
@@ -12,8 +13,7 @@ class App extends Component {
   render() {
   return (
     <div className="App">
-     
-      <User />
+      <Cars />
     </div>
   );
 }
