@@ -1,4 +1,4 @@
-import React, { Fragment, setState } from "react"; 
+/*import React, { Fragment, setState } from "react"; 
 import ImageUploader from 'react-images-upload';
 import Message from './message';
 import Axios from "axios";
@@ -84,4 +84,4 @@ class PicUploader extends React.Component {
 }
 
 
-export default PicUploader;
+export default PicUploader;*/

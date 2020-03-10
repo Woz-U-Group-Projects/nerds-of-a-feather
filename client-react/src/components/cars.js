@@ -111,9 +111,12 @@ class Cars extends Component {
         };
 
     render() { 
+      
         return (
+            
             <form onSubmit={this.handleSubmit}>
                 <div>
+                <h1>Awesome Cars!</h1>
                     <label>Year: </label>
                     <input ref={this.vehicleName} type='number' value={this.state.year} onChange={this.handleYearChange}/>
                     <br />
@@ -153,10 +156,12 @@ class Cars extends Component {
                     <input ref={this.vehicleName} type='number' value={this.state.price} onChange={this.handlePriceChange}/>
                     <br />
                 </div>
-                <button type='submit'>Submit</button>
+                <button type="submit" className="btn btn-success">Submit</button>
                 
             </form>
+            
          );
+         
     }
 }
  
