@@ -116,7 +116,7 @@ class Cars extends Component {
             
             <form onSubmit={this.handleSubmit}>
                 <div>
-                <h1>Awesome Cars!</h1>
+                <h1>Submit A Car!</h1>
                     <label>Year: </label>
                     <input ref={this.vehicleName} type='number' value={this.state.year} onChange={this.handleYearChange}/>
                     <br />
