@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+
 import "./App.css";
-//import User from './components/User';
-import Cars from './components/cars';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import User from './components/User';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
@@ -12,7 +12,8 @@ class App extends Component {
   render() {
   return (
     <div className="App">
-      <Cars />
+      
+      <User onSubmit={fields => this.onSubmit(fields)}/>
     </div>
   );
 }
