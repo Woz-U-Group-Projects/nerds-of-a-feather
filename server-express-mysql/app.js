@@ -7,9 +7,9 @@ var models = require("./models");
 var cors = require("cors");
 var passport = require('passport');
 var tasksRouter = require("./routes/tasks");
-var vehiclesRouter = require("./routes/vehicles");
+//var vehiclesRouter = require("./routes/vehicles");
 var usersRouter = require("./routes/users");
-var reviewssRouter = require("./routes/reviews");
+var reviewsRouter = require("./routes/reviews");
 var session = require('express-session');
 var app = express();
 
@@ -25,9 +25,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/tasks", tasksRouter);
-app.use("./routes/vehicles", vehiclesRouter);
+//app.use("./routes/vehicles", vehiclesRouter);
 app.use("./routes/users", usersRouter);
-app.use("./routes/reviews", reviewsRouter);
+app.use("/reviews", reviewsRouter);
 
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");

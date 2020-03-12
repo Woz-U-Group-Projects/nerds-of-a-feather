@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     idreviews: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     body: {
       type: DataTypes.STRING(1000),
