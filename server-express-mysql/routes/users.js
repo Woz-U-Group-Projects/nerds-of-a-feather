@@ -92,23 +92,7 @@ router.get('/users/signup', function(req, res, next) {
   );
   });
 
-  router.get("/admin", function(req, res, next) {
-    if (req.user && req.user.Admin) {
-      models.users
-        .findAll({
-          attributes: ['UserId', 'FirstName', 'LastName',
-                'Email', 'Username' 
-             ]
-        })
-        .then(users => res.render("users", { users: users }));
-    } else {
-      res.redirect("unauthorized");
-    }
-   });
-
-   router.get('/users/logout', function (req, res, next) {
-    res.cookie('jwt', "", { expires: new Date(0) });
-    res.send('Logged out');
-    });
+ 
+    
     
     module.exports = router;
