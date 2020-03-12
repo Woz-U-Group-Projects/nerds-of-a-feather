@@ -28,7 +28,7 @@ router.get("/", function(req, res, next) {
       })
   });
   router.post('/reviews', function (req, res, next) {
-    models.actor.create(req.body)
+    models.reviews.create(req.body)
       .then(newReviews => {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(newReviews));
@@ -38,7 +38,17 @@ router.get("/", function(req, res, next) {
         res.send(err.message);
       });
   });
-
+  router.get('/reviews/:id', function(req, res, next) {
+    models.reviews
+      .findOne({ 
+        include: [{ model: models.mopar }], 
+        where: { reviews_id: parseInt(req.params.id) }
+      })
+      .then(reviewsFound => {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(reviewsFound));
+      })
+  });
 
 
 
