@@ -46,7 +46,7 @@ router.get('/users/signup', function(req, res, next) {
           message: "Login Failed"
         });
       } else {
-        let passwordMatch = authService.comparePasswords(req.body.password, user.Password);
+        let passwordMatch = authService.comparePassword(req.body.password, user.Password);
         if (passwordMatch) {
           let token = authService.signUser(user);
           res.cookie('jwt', token);
