@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = () => (
     <div>
-      <h2>Login</h2>
+      <h2 className="nav-buttons">Login</h2>
     
     </div>
   );

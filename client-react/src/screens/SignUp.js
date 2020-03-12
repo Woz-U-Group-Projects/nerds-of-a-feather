@@ -3,7 +3,7 @@ import User from '../components/User';
 
 const SignUp = () => (
     <div>
-      <h2>SignUp</h2>
+      <h2 className="nav-buttons">SignUp</h2>
       <User/>
     </div>
   );

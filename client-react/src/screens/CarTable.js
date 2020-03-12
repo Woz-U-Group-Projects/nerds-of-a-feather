@@ -4,7 +4,7 @@ import Cars from '../components/cars.js';
 
 const CarTable = () => (
     <div>  
-      <Cars/>
+      <Cars className="nav-buttons"/>
       
     </div>
    

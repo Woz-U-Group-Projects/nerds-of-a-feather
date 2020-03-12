@@ -1,9 +1,11 @@
 import React from 'react';
-import logo from '../Img/awesomemopars.png'
+//import logo from '../Img/awesomemopars.png'
+
 const Home = () => (
-    <div>
-      <h2>Welcome to Awesome Mopars!</h2>
-      <img src={logo} alt="logo"></img>
+    <div backgroundImage>
+      <h2 className="title" >Welcome to Awesome Auto Reviews!</h2>
+      {/*<img src={logo} alt="logo" ></img>*/}
+
     </div>
   );
 
