@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 
 class User extends React.Component {
     state = {
@@ -8,6 +9,31 @@ class User extends React.Component {
         password: "",
         email: "",
     };
+
+    /*handleChange = event => {
+        this.setState({ name: event.target.value });
+    }*/
+
+    handleSubmit = event => {
+        event.preventDefault();
+    
+
+    const newUser = {
+        firstName: this.state.name,
+        lastName: this.state.name,
+        userName: this.state.name,
+        password: this.state.name,
+        email: this.state.name
+    }
+
+    Axios.post(`http:localhost3000/Signup`, { newUser })
+    .then(res => {
+        console.log(res);
+        console.log(res.data);
+    })
+}
+
+
 
     change = (e) => {
         this.setState({
@@ -61,7 +87,7 @@ class User extends React.Component {
                 onChange={e => this.change(e)} 
                 />
                 <br/>
-                <button onClick={(e) => this.onSubmit(e)}>Submit</button>
+                <button onClick={e => this.onSubmit(e)}>Submit</button>
             </form>
 
         )
