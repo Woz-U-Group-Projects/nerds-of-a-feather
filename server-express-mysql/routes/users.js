@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
-//var passport = require('../services/passport');
-//var authService = require('../services/auth');
+var passport = require('../services/passport');
+var authService = require('../services/auth');
 var mopars = require('../models/mopars');
 const mysql = require('mysql2');
 
@@ -96,31 +96,7 @@ router.get('/users/signup', function(req, res, next) {
   );
   });
 
-<<<<<<< HEAD:server-express-mysql/routes/index.js
-  router.get("/admin", function(req, res, next) {
-    if (req.user && req.user.Admin) {
-      models.users
-        .findAll({
-          attributes: ['UserId', 'FirstName', 'LastName',
-                'Email', 'Username' 
-             ]
-        })
-        .then(users => res.render("users", { users: users }));
-    } else {
-      res.redirect("unauthorized");
-    }
-   });
-
-   router.get('/users/logout', function (req, res, next) {
-    res.cookie('jwt', "", { expires: new Date(0) });
-    res.send('Logged out');
-    });
-
-    
   
-=======
- 
     
->>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc:server-express-mysql/routes/users.js
     
     module.exports = router;

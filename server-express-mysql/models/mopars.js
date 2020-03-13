@@ -39,6 +39,14 @@ module.exports = function(sequelize, DataTypes) {
     VIN: {
       type: DataTypes.STRING(17),
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.TIME(),
+      defaultValue: DataTypes.NOW()
+    },
+    updatedAt: {
+      type: DataTypes.TIME(),
+      defaultValue: DataTypes.NOW()
     }
   }, {
     tableName: 'mopars'
