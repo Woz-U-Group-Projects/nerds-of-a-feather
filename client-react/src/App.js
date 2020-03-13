@@ -6,16 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
-  onSubmit = fields => {
-    console.log("App comp got:", fields);
+ // onSubmit = fields => {
+   // console.log("App comp got:", fields);
+   render() {
+    return (
+      <div className="App">
+    
+        <Cars/>
+      </div>
+    );
   }
-  render() {
-  return (
-    <div className="App">
-      <Cars />
-    </div>
-  );
-}
-}
-
+  }
+  
 export default App;

@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models/users');
-var passport = require('../services/passport');
-var authService = require('../services/auth');
+var models = require('../models');
+//var passport = require('../services/passport');
+//var authService = require('../services/auth');
+var mopars = require('../models/mopars');
+const mysql = require('mysql2');
+
+
 
 router.get('/users/signup', function(req, res, next) {
     res.render('/user/signup');
@@ -31,8 +35,8 @@ router.get('/users/signup', function(req, res, next) {
       });
   });
 
-  router.post('/login', passport.authenticate('local', { failureRedirect: '/users/login' }),
-  function (req, res, next) { res.redirect('profile') });
+  //router.post('/login', passport.authenticate('local', { failureRedirect: '/users/login' }),
+  //function (req, res, next) { res.redirect('profile') });
 
   router.post('/login', function (req, res, next) {
     models.users.findOne({
@@ -110,5 +114,8 @@ router.get('/users/signup', function(req, res, next) {
     res.cookie('jwt', "", { expires: new Date(0) });
     res.send('Logged out');
     });
+
+    
+  
     
     module.exports = router;
