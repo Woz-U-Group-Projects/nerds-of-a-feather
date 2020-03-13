@@ -25,28 +25,21 @@ class User extends React.Component {
         this.setState({ name: event.target.value });
     }*/
 
-    handleSubmit = event => {
-        event.preventDefault();
+    // handleSubmit = event => {
+    //     event.preventDefault();
     
 
-    const newUser = {
-        firstName: this.state.name,
-        lastName: this.state.name,
-        userName: this.state.name,
-        password: this.state.name,
-        email: this.state.name
-    }
-
-    Axios.post(`http:localhost3000/Signup`, { newUser })
-    .then(res => {
-        console.log(res);
-        console.log(res.data);
-    })
-}
+    // const newUser = {
+    //     firstName: this.state.name,
+    //     lastName: this.state.name,
+    //     userName: this.state.name,
+    //     password: this.state.name,
+    //     email: this.state.name
+    // }
 
 
 
-    change = (e) => {
+    change = e => {
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -65,6 +58,7 @@ class User extends React.Component {
             this.setState({ addUser: ''});
         })
     }
+
 
     render () {
         const { firstName, lastName, userName, password, email } = this.state
@@ -114,6 +108,6 @@ class User extends React.Component {
 
         )
     }
-}
+    }
 
 export default User;

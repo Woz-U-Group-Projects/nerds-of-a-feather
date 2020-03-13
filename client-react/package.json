@@ -12,11 +12,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-images-upload": "^1.2.8",
-<<<<<<< HEAD
-    "react-router": "^5.1.2",
-=======
     "react-mdl": "^2.1.0",
->>>>>>> 553a138cdad0aa3b1dd695c40511b93f13895d34
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1"
   },
