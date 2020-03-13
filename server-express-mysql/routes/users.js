@@ -1,18 +1,19 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models/users');
+//models should be to the models folder
+var models = require('../models');
 var passport = require('../services/passport');
 var authService = require('../services/auth');
 
-router.get('/users/signup', function(req, res, next) {
+router.get('/signup', function(req, res, next) {
     res.render('/user/signup');
   });
   
-  router.post('/users/signup', function(req, res, next) {
+  router.post('/signup', function(req, res, next) {
     models.users
       .findOrCreate({
         where: {
-          Username: req.body.username,
+          UserName: req.body.username,
           Email: req.body.email
         },
         defaults: {
@@ -31,13 +32,16 @@ router.get('/users/signup', function(req, res, next) {
       });
   });
 
-  router.post('/login', passport.authenticate('local', { failureRedirect: '/users/login' }),
-  function (req, res, next) { res.redirect('profile') });
+  
 
+
+  router.get('/login', function(req, res, next) {
+    res.send("Login page");
+  });
   router.post('/login', function (req, res, next) {
     models.users.findOne({
       where: {
-        Username: req.body.username
+        UserName: req.body.username
       }
     }).then(user => {
       if (!user) {
@@ -46,7 +50,7 @@ router.get('/users/signup', function(req, res, next) {
           message: "Login Failed"
         });
       } else {
-        let passwordMatch = authService.comparePassword(req.body.password, user.Password);
+        let passwordMatch = authService.comparePasswords(req.body.password, user.Password);
         if (passwordMatch) {
           let token = authService.signUser(user);
           res.cookie('jwt', token);
@@ -59,26 +63,21 @@ router.get('/users/signup', function(req, res, next) {
     });
   });
 
-  router.get('/users/profile', function (req, res, next) {
+  router.get('/profile', function (req, res, next) {
     let token = req.cookies.jwt;
-    if (token) {
-      authService.verifyUser(token)
-        .then(user => {
-          if (user) {
-            res.send(JSON.stringify(user));
-          } else {
-            res.status(401);
-            res.send('Invalid authentication token');
-          }
-        });
-    } else {
-      res.status(401);
-      res.send('Must be logged in');
-    }
+    authService.verifyUser(token)
+      .then(user => {
+        if (user) {
+          res.send(JSON.stringify(user));
+        } else {
+          res.status(401);
+          res.send('Must be logged in');
+        }
+      })
   });
 
  
-  router.delete("/users/:id", function (req, res, next) {
+  router.delete("/:id", function (req, res, next) {
     let usersId = parseInt(req.params.id);
     models.actor
       .destroy({
@@ -92,7 +91,10 @@ router.get('/users/signup', function(req, res, next) {
   );
   });
 
- 
+  router.get('/logout', function (req, res, next) {
+    res.cookie('jwt', "", { expires: new Date(0) });
+    res.send('Logged out');
+    });
     
     
     module.exports = router;

@@ -26,7 +26,7 @@ app.use(passport.session());
 
 app.use("/tasks", tasksRouter);
 //app.use("./routes/vehicles", vehiclesRouter);
-app.use("./routes/users", usersRouter);
+app.use("/users", usersRouter);
 app.use("/reviews", reviewsRouter);
 
 models.sequelize.sync().then(function() {

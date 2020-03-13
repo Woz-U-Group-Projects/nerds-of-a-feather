@@ -49,38 +49,16 @@
                     "allowNull": false,
                     "field": "VIN",
                     "seqType": "Sequelize.STRING(17)"
-                }
-            },
-            "indexes": []
-        },
-        "reviews": {
-            "tableName": "reviews",
-            "schema": {
-                "idreviews": {
-                    "allowNull": false,
-                    "primaryKey": true,
-                    "autoIncrement": true,
-                    "field": "idreviews",
-                    "seqType": "Sequelize.INTEGER"
                 },
-                "body": {
-                    "allowNull": true,
-                    "field": "body",
-                    "seqType": "Sequelize.STRING(1000)"
-                },
-                "rating": {
+                "createdAt": {
                     "allowNull": false,
-                    "field": "rating",
-                    "seqType": "Sequelize.INTEGER"
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
                 },
-                "mopar_id": {
+                "updatedAt": {
                     "allowNull": false,
-                    "references": {
-                        "model": "mopars",
-                        "key": "MoparID"
-                    },
-                    "field": "mopar_id",
-                    "seqType": "Sequelize.INTEGER.UNSIGNED"
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
@@ -114,17 +92,27 @@
                 "Password": {
                     "allowNull": false,
                     "field": "Password",
-                    "seqType": "Sequelize.STRING(100)"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "Email": {
                     "allowNull": false,
                     "unique": true,
                     "field": "Email",
                     "seqType": "Sequelize.STRING(45)"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 1
 }
