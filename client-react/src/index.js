@@ -12,14 +12,6 @@ import "./bootstrap.min.css";
 
 
 
-<<<<<<< HEAD
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
-=======
 
 
 
@@ -82,6 +74,7 @@ const App = () => (
                 <Route path="/SignUp" component={SignUp}/> 
                 <Route path="/Cars" component={Cars}/> 
                 <Route path="/CarTable" component={CarTable}/> 
+              
         </div>       
          
     </Router>
@@ -93,4 +86,3 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // window.addEventListener('popstate', () => {
     
    //})
->>>>>>> Dev

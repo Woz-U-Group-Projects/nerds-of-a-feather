@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 const Inventory = () => (
     <div>
       <h2 className="nav-buttons">Our Inventory</h2>
