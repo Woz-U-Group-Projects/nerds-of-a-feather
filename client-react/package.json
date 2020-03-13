@@ -4,18 +4,15 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
-<<<<<<< HEAD
-    "express": "^4.17.1",
-=======
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.4.1",
     "express-fileupload": "^1.1.6",
     "kill-port": "^1.6.0",
->>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-images-upload": "^1.2.8",
+    "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1"
   },
