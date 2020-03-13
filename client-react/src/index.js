@@ -74,6 +74,7 @@ const App = () => (
                 <Route path="/SignUp" component={SignUp}/> 
                 <Route path="/Cars" component={Cars}/> 
                 <Route path="/CarTable" component={CarTable}/> 
+              
         </div>       
          
     </Router>

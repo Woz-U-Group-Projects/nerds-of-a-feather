@@ -116,44 +116,44 @@ class Cars extends Component {
             
             <form onSubmit={this.handleSubmit}>
                 <div>
-                <h1>Submit A Car!</h1>
-                    <label>Year: </label>
-                    <input ref={this.vehicleName} type='number' value={this.state.year} onChange={this.handleYearChange}/>
+                <h1 className="h1">Submit A Car!</h1>
+                    {/*<label>Year: </label>*/}
+                    <input placeholder="Year" ref={this.vehicleName} type='number' value={this.state.year} onChange={this.handleYearChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Make: </label>
-                    <input ref={this.vehicleName} type='text' value={this.state.make} onChange={this.handleMakeChange}/>
+                    {/*<label>Make: </label>*/}
+                    <input placeholder="Make" ref={this.vehicleName} type='text' value={this.state.make} onChange={this.handleMakeChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Model: </label>
-                    <input ref={this.vehicleName} type='text' value={this.state.model} onChange={this.handleModelChange}/>
+                    {/*<label>Model: </label>*/}
+                    <input placeholder="Model" ref={this.vehicleName} type='text' value={this.state.model} onChange={this.handleModelChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Mileage: </label>
-                    <input ref={this.vehicleName} type='number' value={this.state.mileage} onChange={this.handleMileageChange}/>
+                    {/*<label>Mileage: </label>*/}
+                    <input placeholder="Mileage" ref={this.vehicleName} type='number' value={this.state.mileage} onChange={this.handleMileageChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Vin: </label>
-                    <input ref={this.vehicleName} type='text' value={this.state.vin} onChange={this.handleVinChange}/>
+                    {/*<label>Vin: </label>*/}
+                    <input placeholder="Vin" ref={this.vehicleName} type='text' value={this.state.vin} onChange={this.handleVinChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Number Of Doors: </label>
-                    <input ref={this.vehicleName} type='number' value={this.state.doors} onChange={this.handleDoorsChange}/>
+                    {/*<label>Number Of Doors: </label>*/}
+                    <input placeholder="# of doors" ref={this.vehicleName} type='number' value={this.state.doors} onChange={this.handleDoorsChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Color: </label>
-                    <input ref={this.vehicleName} type='text' value={this.state.color} onChange={this.handleColorChange}/>
+                    {/*<label>Color: </label>*/}
+                    <input placeholder="Color" ref={this.vehicleName} type='text' value={this.state.color} onChange={this.handleColorChange}/>
                     <br />
                 </div>
                 <div>
-                    <label>Price: </label>
-                    <input ref={this.vehicleName} type='number' value={this.state.price} onChange={this.handlePriceChange}/>
+                    {/*<label>Price: </label>*/}
+                    <input placeholder="Price" ref={this.vehicleName} type='number' value={this.state.price} onChange={this.handlePriceChange}/>
                     <br />
                 </div>
                 <button type="submit" className="btn btn-success">Submit</button>
