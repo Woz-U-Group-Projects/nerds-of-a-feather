@@ -18,27 +18,35 @@ module.exports = function(sequelize, DataTypes) {
     },
     Year: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     DOORS: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     MILEAGE: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     COLOR: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false
     },
     PRICE: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     VIN: {
       type: DataTypes.STRING(17),
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.TIME(),
+      defaultValue: DataTypes.NOW()
+    },
+    updatedAt: {
+      type: DataTypes.TIME(),
+      defaultValue: DataTypes.NOW()
     }
   }, {
     tableName: 'mopars'

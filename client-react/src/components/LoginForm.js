@@ -33,20 +33,26 @@ class LoginForm extends React.Component {
     render () {
         return (
             <form>
+                <div>
                 <input name="userName"
                 placeholder="User Name" 
                 value={this.state.userName}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <input name="password"
                 type="password"
                 placeholder="Password" 
                 value={this.state.password}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <button onClick={(e) => this.onSubmit(e)}>Submit</button>
+                </div>
             </form>
 
         )

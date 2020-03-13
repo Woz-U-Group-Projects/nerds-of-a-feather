@@ -9,9 +9,21 @@ import CarTable from './screens/CarTable.js';
 
 class App extends Component {
 
-  onSubmit = fields => {
-    console.log("App comp got:", fields);
+ // onSubmit = fields => {
+   // console.log("App comp got:", fields);
+   render() {
+    return (
+      <div className="App">
+    
+        <Cars/>
+      </div>
+    );
   }
+<<<<<<< HEAD
+  }
+  
+export default App;
+=======
   render() {
     
   return (
@@ -25,3 +37,4 @@ class App extends Component {
 }
 
 export default App;
+>>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc

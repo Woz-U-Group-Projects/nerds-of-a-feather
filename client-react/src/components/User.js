@@ -56,38 +56,50 @@ class User extends React.Component {
     render () {
         return (
             <form>
+                <div>
                 <input name="firstName"
                 placeholder="First Name" 
                 value={this.state.firstName}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <input name="lastName"
                 placeholder="Last Name" 
                 value={this.state.lastName}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <input name="userName"
                 placeholder="User Name" 
                 value={this.state.userName}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <input name="password"
                 type="password"
                 placeholder="Password" 
                 value={this.state.password}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <input name="email"
                 placeholder="Email" 
                 value={this.state.email}   
                 onChange={e => this.change(e)} 
                 />
+                </div>
                 <br/>
+                <div>
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
+                </div>
             </form>
 
         )
