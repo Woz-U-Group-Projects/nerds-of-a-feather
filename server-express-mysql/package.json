@@ -6,17 +6,28 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+<<<<<<< HEAD
     "express-react-views": "^0.11.0",
+=======
+    "express-session": "^1.17.0",
+    "jsonwebtoken": "^8.5.1",
+>>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc
     "morgan": "~1.9.0",
     "msql": "^1.0.3",
     "mysql": "^2.18.1",
     "mysql2": "^1.6.5",
+<<<<<<< HEAD
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+=======
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+>>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc
     "sequelize": "^4.43.0",
     "sequelize-cli": "^5.5.1"
   },

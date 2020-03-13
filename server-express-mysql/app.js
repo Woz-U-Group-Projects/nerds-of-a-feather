@@ -5,19 +5,11 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var models = require("./models");
 var cors = require("cors");
-var mopars = require('./models/mopars');
-var indexRouter = require('./routes/index');
-
-
-
-
-
+var passport = require('passport');
 var tasksRouter = require("./routes/tasks");
-var carRouter = require('./routes/vehicles');
-
-
-
-
+var vehiclesRouter = require("./routes/vehicles");
+var usersRouter = require("./routes/users");
+var session = require('express-session');
 var app = express();
 
 app.use(logger("dev"));
@@ -27,13 +19,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
-
-
+app.use(session({ secret: 'perilous journey' }));
+app.use(passport.initialize());  
+app.use(passport.session());
 
 app.use("/tasks", tasksRouter);
-app.use('/index', indexRouter);
-app.use('/cars', carRouter);
-
+app.use("/vehicles", vehiclesRouter);
+app.use("/users", usersRouter);
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");
 });

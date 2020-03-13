@@ -96,6 +96,7 @@ router.get('/users/signup', function(req, res, next) {
   );
   });
 
+<<<<<<< HEAD:server-express-mysql/routes/index.js
   router.get("/admin", function(req, res, next) {
     if (req.user && req.user.Admin) {
       models.users
@@ -117,5 +118,9 @@ router.get('/users/signup', function(req, res, next) {
 
     
   
+=======
+ 
+    
+>>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc:server-express-mysql/routes/users.js
     
     module.exports = router;

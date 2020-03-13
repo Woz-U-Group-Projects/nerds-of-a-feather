@@ -1,13 +1,19 @@
 import React from 'react';
+import axios from 'axios';
 
-class User extends React.Component {
+class LoginForm extends React.Component {
     state = {
-        firstName: "",
-        lastName: "",
         userName: "",
-        password: "",
-        email: "",
-    };
+        password: ""  
+    }
+
+    getLoginForm(){
+      axios.get('http://localhost:3001/cars').then(res => {
+          const LoginForm = res.data;
+          this.setState({ LoginForm });
+        });
+           
+      }  
 
     change = (e) => {
         this.setState({
@@ -19,29 +25,14 @@ class User extends React.Component {
         e.preventDefault();
         this.props.onSubmit(this.state);
         this.setState({
-            firstName: "",
-            lastName: "",
             userName: "",
-            password: "",
-            email: "",
+            password: ""
         });
     }
 
     render () {
         return (
             <form>
-                <input name="firstName"
-                placeholder="First Name" 
-                value={this.state.firstName}   
-                onChange={e => this.change(e)} 
-                />
-                <br/>
-                <input name="lastName"
-                placeholder="Last Name" 
-                value={this.state.lastName}   
-                onChange={e => this.change(e)} 
-                />
-                <br/>
                 <input name="userName"
                 placeholder="User Name" 
                 value={this.state.userName}   
@@ -55,12 +46,6 @@ class User extends React.Component {
                 onChange={e => this.change(e)} 
                 />
                 <br/>
-                <input name="email"
-                placeholder="Email" 
-                value={this.state.email}   
-                onChange={e => this.change(e)} 
-                />
-                <br/>
                 <button onClick={(e) => this.onSubmit(e)}>Submit</button>
             </form>
 
@@ -68,4 +53,4 @@ class User extends React.Component {
     }
 }
 
-export default User;
+export default LoginForm;
