@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var models = require('../models');
 
-
+router.get('/', function(req,res, next) {
+    
+})
 
   router.post("/create", function (req, res, next) {
     let addCar = new models.mopars();
