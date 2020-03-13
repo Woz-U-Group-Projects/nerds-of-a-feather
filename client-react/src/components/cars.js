@@ -51,43 +51,35 @@ class Cars extends Component {
             <div>
                 <form onSubmit={this.submitHandler}>
                     <div>
-                    <label>Year: </label>
-                    <input type="number" name="year" value={year} onChange={this.changeHandler}/>
+                    <input placeholder="Year" type="number" name="year" value={year} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Make: </label>
-                    <input type="text" name="make" value={make} onChange={this.changeHandler}/>
+                    <input placeholder="Make" type="text" name="make" value={make} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Model: </label>
-                    <input type="text" name="model" value={model} onChange={this.changeHandler}/>
+                    <input placeholder="Model" type="text" name="model" value={model} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Mileage: </label>
-                    <input type="number" name="mileage" value={mileage} onChange={this.changeHandler}/>
+                    <input placeholder="Mileage" type="number" name="mileage" value={mileage} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Vin: </label>
-                    <input type="text" name="vin" value={vin} onChange={this.changeHandler}/>
+                    <input placeholder="Vin" type="text" name="vin" value={vin} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Color: </label>
-                    <input type="text" name="color" value={color} onChange={this.changeHandler}/>
+                    <input placeholder="Color" type="text" name="color" value={color} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Number Of Doors: </label>
-                    <input type="number" name="doors" value={doors} onChange={this.changeHandler}/>
+                    <input placeholder="# of doors" type="number" name="doors" value={doors} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <div>
-                    <label>Price: </label>
-                    <input type="number" name="price" value={price} onChange={this.changeHandler}/>
+                    <input placeholder="Price" type="number" name="price" value={price} onChange={this.changeHandler}/>
                     </div>
                     <br />
                     <button type='submit'>Submit</button>
