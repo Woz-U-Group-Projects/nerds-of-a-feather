@@ -1,6 +1,6 @@
 import React from 'react';
 import  ReactDOM  from 'react-dom';
-import Cars from './screens/Inventory';
+import Inventory from './screens/Inventory';
 import Home from './screens/Home';
 import CarTable from './screens/CarTable';
 import Login from './screens/Login';
@@ -29,7 +29,7 @@ const App = () => (
                 {/*<button className="btn1"><Link to="/" className="nav-buttons">Home</Link></button>*/}
                 <button className="btn1"><Link to="/Login" className="nav-buttons">Login</Link></button>
                 <button className="btn1"><Link to="/SignUp" className="nav-buttons">Sign Up</Link></button>
-                <button className="btn1"><Link to="/Cars" className="nav-buttons">Inventory</Link></button>
+                <button className="btn1"><Link to="/Inventory" className="nav-buttons">Inventory</Link></button>
                 <button className="btn1"><Link to="/CarTable" className="nav-buttons">Submit A Car!</Link></button>
             </div>
       {/*<ul class="navbar-nav mr-auto">
@@ -72,7 +72,7 @@ const App = () => (
                 <Route exact path="/" component={Home}/>
                 <Route path="/Login" component={Login}/>
                 <Route path="/SignUp" component={SignUp}/> 
-                <Route path="/Cars" component={Cars}/> 
+                <Route path="/Inventory" component={Inventory}/> 
                 <Route path="/CarTable" component={CarTable}/> 
               
         </div>       

@@ -24,9 +24,9 @@ app.use(session({ secret: 'perilous journey' }));
 app.use(passport.initialize());  
 app.use(passport.session());
 
-//app.use("/tasks", tasksRouter);
+app.use("/tasks", tasksRouter);
 app.use("/cars", vehiclesRouter);
-//app.use("/users", usersRouter);
+app.use("/users", usersRouter);
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");
 });

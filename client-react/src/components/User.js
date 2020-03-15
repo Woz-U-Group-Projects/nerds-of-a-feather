@@ -1,65 +1,73 @@
 import React from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 class User extends React.Component {
-    state = {
-        firstName: "",
-        lastName: "",
-        userName: "",
-        password: "",
-        email: "",
-    };
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            firstName: '',
+            lastName: '',
+            userName: '',
+            password: '',
+            email: ''
+        }
+    }
+
+    getUser() {
+        axios.get('http://localhost:3001/users').then(res => {
+            const user = res.data;
+            this.setState({ user });
+        });
+    }
 
     /*handleChange = event => {
         this.setState({ name: event.target.value });
     }*/
 
-    handleSubmit = event => {
-        event.preventDefault();
+    // handleSubmit = event => {
+    //     event.preventDefault();
     
 
-    const newUser = {
-        firstName: this.state.name,
-        lastName: this.state.name,
-        userName: this.state.name,
-        password: this.state.name,
-        email: this.state.name
-    }
-
-    Axios.post(`http:localhost3000/Signup`, { newUser })
-    .then(res => {
-        console.log(res);
-        console.log(res.data);
-    })
-}
+    // const newUser = {
+    //     firstName: this.state.name,
+    //     lastName: this.state.name,
+    //     userName: this.state.name,
+    //     password: this.state.name,
+    //     email: this.state.name
+    // }
 
 
 
-    change = (e) => {
+    change = e => {
         this.setState({
             [e.target.name]: e.target.value
         });
     };
 
-    onSubmit = (e) => {
-        e.preventDefault();
-        this.props.onSubmit(this.state);
-        this.setState({
-            firstName: "",
-            lastName: "",
-            userName: "",
-            password: "",
-            email: "",
-        });
+    submitHandler = e => {
+        //e.preventDefault()
+        axios.post('http://localhost:3001/users/create', {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            userName: this.state.userName,
+            password: this.state.password,
+            email: this.state.email
+    })
+        .then(res => {
+            this.setState({ addUser: ''});
+        })
     }
 
+
     render () {
+        const { firstName, lastName, userName, password, email } = this.state
         return (
-            <form>
+            <form onSubmit={this.submitHandler}>
                 <div>
                 <input name="firstName"
                 placeholder="First Name" 
-                value={this.state.firstName}   
+                value={firstName}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
@@ -67,7 +75,7 @@ class User extends React.Component {
                 <div>
                 <input name="lastName"
                 placeholder="Last Name" 
-                value={this.state.lastName}   
+                value={lastName}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
@@ -75,7 +83,7 @@ class User extends React.Component {
                 <div>
                 <input name="userName"
                 placeholder="User Name" 
-                value={this.state.userName}   
+                value={userName}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
@@ -84,7 +92,7 @@ class User extends React.Component {
                 <input name="password"
                 type="password"
                 placeholder="Password" 
-                value={this.state.password}   
+                value={password}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
@@ -92,18 +100,16 @@ class User extends React.Component {
                 <div>
                 <input name="email"
                 placeholder="Email" 
-                value={this.state.email}   
+                value={email}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
                 <br/>
-                <div>
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
-                </div>
+                <button type='submit'>Submit</button>
             </form>
 
         )
     }
-}
+    }
 
 export default User;

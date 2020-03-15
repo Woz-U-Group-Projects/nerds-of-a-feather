@@ -29,6 +29,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: false,
       unique: true
+    },
+    createdAt: {
+      type: DataTypes.TIME(),
+      defaultValue: DataTypes.NOW()
+    },
+    updatedAt: {
+      type: DataTypes.TIME(),
+      defaultValue: DataTypes.NOW()
     }
   }, {
     tableName: 'users'

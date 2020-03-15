@@ -30,19 +30,18 @@ class Cars extends Component {
 
     submitHandler = e => {
         e.preventDefault()
-        axios.post('http://localhost:3001/cars', {
-            year: this.year.current.value,
-            make: this.make.current.value,
-            model: this.model.current.value,
-            mileage: this.mileage.current.value,
-            vin: this.vin.current.value,
-            color: this.color.current.value,
-            doors: this.doors.current.value,
-            price: this.price.current.value
+        axios.post('http://localhost:3001/cars/create', {
+            year: this.state.year,
+            make: this.state.make,
+            model: this.state.model,
+            mileage: this.state.mileage,
+            vin: this.state.vin,
+            color: this.state.color,
+            doors: this.state.doors,
+            price: this.state.price
     })
         .then(res => {
             this.setState({ addCar: ''});
-            this.getCar();
         })
     }
 
