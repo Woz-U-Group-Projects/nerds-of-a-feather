@@ -21,27 +21,27 @@
                     "seqType": "Sequelize.STRING(50)"
                 },
                 "Year": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "Year",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "DOORS": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "DOORS",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "MILEAGE": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "MILEAGE",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "COLOR": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "COLOR",
                     "seqType": "Sequelize.STRING(50)"
                 },
                 "PRICE": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "PRICE",
                     "seqType": "Sequelize.INTEGER"
                 },
@@ -49,22 +49,6 @@
                     "allowNull": false,
                     "field": "VIN",
                     "seqType": "Sequelize.STRING(17)"
-                },
-                "createdAt": {
-                    "defaultValue": {
-                        "internal": true,
-                        "value": "Sequelize.NOW"
-                    },
-                    "field": "createdAt",
-                    "seqType": "Sequelize.TIME"
-                },
-                "updatedAt": {
-                    "defaultValue": {
-                        "internal": true,
-                        "value": "Sequelize.NOW"
-                    },
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.TIME"
                 }
             },
             "indexes": []
@@ -109,7 +93,7 @@
                     "primaryKey": true,
                     "autoIncrement": true,
                     "field": "idusers",
-                    "seqType": "Sequelize.INTEGER"
+                    "seqType": "Sequelize.INTEGER(11)"
                 },
                 "FirstName": {
                     "allowNull": false,
@@ -130,7 +114,7 @@
                 "Password": {
                     "allowNull": false,
                     "field": "Password",
-                    "seqType": "Sequelize.STRING(16)"
+                    "seqType": "Sequelize.STRING(100)"
                 },
                 "Email": {
                     "allowNull": false,
@@ -142,5 +126,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 2
 }

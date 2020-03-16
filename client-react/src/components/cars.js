@@ -29,7 +29,6 @@ class Cars extends Component {
     }
 
     submitHandler = e => {
-        e.preventDefault()
         axios.post('http://localhost:3001/cars/create', {
             year: this.state.year,
             make: this.state.make,
@@ -89,4 +88,6 @@ class Cars extends Component {
     }
 }
 
-export default Cars
+export default Cars;
+
+

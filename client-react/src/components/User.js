@@ -6,11 +6,11 @@ class User extends React.Component {
         super(props)
 
         this.state = {
-            firstName: '',
-            lastName: '',
-            userName: '',
-            password: '',
-            email: ''
+            FirstName: '',
+            LastName: '',
+            UserName: '',
+            Password: '',
+            Email: ''
         }
     }
 
@@ -48,11 +48,11 @@ class User extends React.Component {
     submitHandler = e => {
         //e.preventDefault()
         axios.post('http://localhost:3001/users/create', {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            userName: this.state.userName,
-            password: this.state.password,
-            email: this.state.email
+            FirstName: this.state.FirstName,
+            LastName: this.state.LastName,
+            UserName: this.state.UserName,
+            Password: this.state.Password,
+            Email: this.state.Email
     })
         .then(res => {
             this.setState({ addUser: ''});
@@ -61,46 +61,46 @@ class User extends React.Component {
 
 
     render () {
-        const { firstName, lastName, userName, password, email } = this.state
+        const { FirstName, LastName, UserName, Password, Email } = this.state
         return (
             <form onSubmit={this.submitHandler}>
                 <div>
-                <input name="firstName"
+                <input name="FirstName"
                 placeholder="First Name" 
-                value={firstName}   
+                value={FirstName}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
                 <br/>
                 <div>
-                <input name="lastName"
+                <input name="LastName"
                 placeholder="Last Name" 
-                value={lastName}   
+                value={LastName}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
                 <br/>
                 <div>
-                <input name="userName"
+                <input name="UserName"
                 placeholder="User Name" 
-                value={userName}   
+                value={UserName}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
                 <br/>
                 <div>
-                <input name="password"
-                type="password"
+                <input name="Password"
+                type="Password"
                 placeholder="Password" 
-                value={password}   
+                value={Password}   
                 onChange={e => this.change(e)} 
                 />
                 </div>
                 <br/>
                 <div>
-                <input name="email"
+                <input name="Email"
                 placeholder="Email" 
-                value={email}   
+                value={Email}   
                 onChange={e => this.change(e)} 
                 />
                 </div>

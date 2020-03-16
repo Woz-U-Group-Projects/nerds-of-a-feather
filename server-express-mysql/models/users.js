@@ -1,9 +1,9 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('users', {
+module.exports = (sequelize, DataTypes) => {
+  var users = sequelize.define('users', {
     idusers: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.INTEGER(),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
@@ -22,23 +22,15 @@ module.exports = function(sequelize, DataTypes) {
       unique: true
     },
     Password: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(16),
       allowNull: false
     },
     Email: {
       type: DataTypes.STRING(45),
       allowNull: false,
       unique: true
-    },
-    createdAt: {
-      type: DataTypes.TIME(),
-      defaultValue: DataTypes.NOW()
-    },
-    updatedAt: {
-      type: DataTypes.TIME(),
-      defaultValue: DataTypes.NOW()
     }
-  }, {
-    tableName: 'users'
-  });
+  }, 
+  );
+  return users;
 };

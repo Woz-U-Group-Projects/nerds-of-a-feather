@@ -10,6 +10,7 @@ var passport = require('passport');
 var tasksRouter = require("./routes/tasks");
 var vehiclesRouter = require("./routes/vehicles");
 var usersRouter = require("./routes/users");
+var reviewsRouter = require("./routes/reviews");
 var session = require('express-session');
 
 
@@ -20,6 +21,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-Width, Content-Type, Accept");
+  next();
+});
+
 app.use(session({ secret: 'perilous journey' }));
 app.use(passport.initialize());  
 app.use(passport.session());
@@ -27,6 +34,8 @@ app.use(passport.session());
 app.use("/tasks", tasksRouter);
 app.use("/cars", vehiclesRouter);
 app.use("/users", usersRouter);
+app.use("/reviews", reviewsRouter);
+
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");
 });

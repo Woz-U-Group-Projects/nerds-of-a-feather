@@ -6,7 +6,7 @@ var models = require('../models');
 passport.use(
   'local',
   new LocalStrategy(function (username, password, done) {
-    models.users.findOne({ where: { Username: username } })
+    models.users.findOne({ where: { UserName: username } })
       .then(user => {
         if (!user) {
           return done(null, false, { message: 'Incorrect username.' });
@@ -24,7 +24,7 @@ passport.use(
 
 
 passport.serializeUser((user, callback) => {
-  callback(null, user.UserId);
+  callback(null, user.idusers);
 });
 
 

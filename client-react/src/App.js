@@ -19,11 +19,6 @@ class App extends Component {
       </div>
     );
   }
-<<<<<<< HEAD
-  }
-  
-export default App;
-=======
   render() {
     
   return (
@@ -37,4 +32,3 @@ export default App;
 }
 
 export default App;
->>>>>>> 71bc26bfe51273d43a3b0c5f7fa0d81fb40315dc
